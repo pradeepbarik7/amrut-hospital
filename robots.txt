@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amrut-multispeciality-hospital.netlify.app/sitemap.xml
