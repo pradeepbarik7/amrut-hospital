@@ -163,15 +163,16 @@
       .hero-card--stat strong { display: block; font-size: 1.42rem; line-height: 1; letter-spacing: -.06em; }
       .hero-card--stat span { display: block; margin-top: .35rem; color: #526963; font-size: .72rem; line-height: 1.35; }
 
-      .numbers { position: relative; z-index: 2; width: var(--content); margin: -25px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #fffdfaf2; box-shadow: 0 16px 35px rgba(25,64,53,.08); }
-      .number { padding: 1.1rem 1.7rem; display: flex; align-items: center; gap: .8rem; }
+      .numbers { position: relative; z-index: 2; width: var(--content); margin: -34px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #fffdfaf2; box-shadow: 0 18px 42px rgba(25,64,53,.10); }
+      .number { min-height: 94px; padding: 1.15rem 1.7rem; display: flex; align-items: center; gap: .8rem; }
       .number + .number { border-left: 1px solid var(--line); }
       .number__icon { width: 37px; height: 37px; display: grid; place-items: center; color: var(--forest); border-radius: 50%; background: var(--mint); }
       .number strong { display: block; font-size: 1.18rem; line-height: 1.1; letter-spacing: -.04em; }
       .number span { display: block; margin-top: .18rem; color: #5b716b; font-size: .72rem; }
 
       section { scroll-margin-top: 100px; }
-      .section { width: var(--content); margin: auto; padding: 104px 0; }
+      .section { width: var(--content); margin: auto; padding: 92px 0; }
+      .numbers + .section { padding-top: 72px; }
       .section-heading { max-width: 730px; margin-bottom: 2.8rem; }
       .section-heading h2 { margin-bottom: .85rem; font-size: clamp(2.05rem, 3.6vw, 3.25rem); line-height: 1.04; letter-spacing: -.065em; font-weight: 600; }
       .section-heading p { max-width: 560px; margin-bottom: 0; color: #577068; }
@@ -212,17 +213,34 @@
       .facility:nth-child(3) { grid-column: 3; grid-row: 1; }
       .facility:nth-child(4) { grid-column: 2 / span 2; grid-row: 2; }
 
-      .gallery-section { padding-top: 10px; }
-      .gallery-intro { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
-      .gallery-intro h2 { margin-bottom: 0; font-size: clamp(1.8rem, 3vw, 2.65rem); letter-spacing: -.06em; font-weight: 600; }
-      .gallery-intro p { max-width: 390px; margin: 0; color: #587068; font-size: .86rem; }
-      .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-      .gallery button { position: relative; overflow: hidden; aspect-ratio: .76; padding: 0; border: 0; border-radius: 13px; cursor: pointer; background: #e6ebe7; }
-      .gallery img { height: 100%; object-fit: cover; transition: transform .35s ease; }
-      .gallery button:hover img { transform: scale(1.07); }
-      .gallery button::after { position: absolute; inset: 0; content: ""; background: rgba(15,53,44,.1); transition: background .2s ease; }
-      .gallery button:hover::after { background: rgba(15,53,44,.28); }
-      .gallery button:nth-child(3n) { transform: translateY(20px); }
+      .testimonials { overflow: hidden; background: var(--mint-pale); }
+      .testimonials__wrap { width: var(--content); margin: auto; padding: 95px 0; }
+      .testimonials__head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.4rem; }
+      .testimonials__head h2 { max-width: 620px; margin-bottom: 0; font-size: clamp(2.05rem, 3.6vw, 3.2rem); line-height: 1.04; letter-spacing: -.065em; font-weight: 600; }
+      .reviews-link { white-space: nowrap; }
+      .review-shell { display: grid; grid-template-columns: 250px 1fr; gap: 1.1rem; align-items: stretch; }
+      .review-summary { padding: 1.55rem; border-radius: var(--radius-md); color: #edf9f0; background: var(--forest-deep); }
+      .review-summary__label { margin-bottom: .7rem; color: #a6d4bc; font-size: .72rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+      .review-summary__score { display: flex; align-items: end; gap: .7rem; }
+      .review-summary__score strong { font-size: 3rem; line-height: .9; letter-spacing: -.07em; }
+      .review-summary__score span { padding-bottom: .23rem; color: #b9d5c6; font-size: .8rem; }
+      .stars { margin: .95rem 0 .6rem; color: #ffd072; letter-spacing: .1em; font-size: .95rem; }
+      .review-summary p:last-child { margin: 0; color: #c3dbcd; font-size: .77rem; line-height: 1.45; }
+      .review-carousel { position: relative; overflow: hidden; min-width: 0; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
+      .review-track { display: flex; transition: transform .42s cubic-bezier(.2,.7,.2,1); }
+      .review-card { min-width: 100%; padding: clamp(1.7rem, 4vw, 2.45rem); display: grid; grid-template-columns: auto 1fr; gap: 1.15rem; align-content: center; }
+      .review-card__quote { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; color: var(--forest); border-radius: 13px; background: var(--mint); }
+      .review-card blockquote { margin: 0; max-width: 780px; color: #27463e; font-size: clamp(1.18rem, 2.1vw, 1.55rem); line-height: 1.35; letter-spacing: -.035em; }
+      .review-card__meta { display: flex; align-items: center; gap: .6rem; margin-top: 1.25rem; color: #637970; font-size: .77rem; }
+      .review-card__meta strong { color: var(--ink); }
+      .review-card__rating { color: var(--orange); letter-spacing: .08em; }
+      .review-controls { position: absolute; right: 1.35rem; bottom: 1.25rem; display: flex; align-items: center; gap: .55rem; }
+      .review-arrow { width: 33px; height: 33px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); color: var(--forest); border-radius: 50%; background: #fff; cursor: pointer; transition: background .2s ease, color .2s ease; }
+      .review-arrow:hover { color: #fff; background: var(--forest); }
+      .review-dots { display: flex; gap: .3rem; margin-left: .25rem; }
+      .review-dot { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 50%; background: #b8c9bf; cursor: pointer; transition: width .2s ease, background .2s ease; }
+      .review-dot.is-active { width: 19px; border-radius: 9px; background: var(--forest); }
+      .reviews-disclosure { margin: 1rem 0 0; color: #678078; font-size: .72rem; }
 
       .visit-wrap { width: var(--content); margin: auto; padding: 102px 0; }
       .visit { position: relative; overflow: hidden; padding: clamp(2rem, 5vw, 4.2rem); border-radius: var(--radius-lg); background: #e6f2e8; }
@@ -243,33 +261,26 @@
       .footer a:hover { color: #fff; }
       .footer-bottom { width: var(--content); margin: auto; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.13); color: #91ada0; font-size: .7rem; }
 
-      .modal { position: fixed; z-index: 50; inset: 0; display: none; place-items: center; padding: 22px; background: rgba(7, 23, 19, .87); }
-      .modal.is-open { display: grid; }
-      .modal__frame { position: relative; max-width: min(900px, 100%); max-height: 100%; }
-      .modal__image { width: auto; max-width: 100%; max-height: calc(100vh - 120px); border-radius: 15px; object-fit: contain; box-shadow: 0 24px 70px rgba(0,0,0,.4); }
-      .modal__label { margin: .75rem 0 0; color: #fff; text-align: center; font-size: .85rem; }
-      .modal__close, .modal__arrow { position: absolute; display: grid; place-items: center; width: 42px; height: 42px; border: 0; color: #fff; border-radius: 50%; background: rgba(255,255,255,.16); cursor: pointer; }
-      .modal__close { top: -50px; right: 0; }
-      .modal__arrow { top: calc(50% - 21px); }
-      .modal__arrow--prev { left: -56px; }
-      .modal__arrow--next { right: -56px; }
 
-      @media (max-width: 860px) {
-        :root { --content: min(100% - 34px, 680px); }
-        .nav { min-height: 68px; }
-        .menu-toggle { display: grid; place-items: center; }
+      @media (max-width: 1040px) {
         .nav-links { position: absolute; top: calc(100% + 9px); right: 0; left: 0; display: none; padding: 1rem; border: 1px solid var(--line); border-radius: 16px; background: #fffdf8; box-shadow: var(--shadow); }
         .nav-links.is-open { display: grid; gap: .3rem; }
         .nav-links a { padding: .6rem; }
         .nav-button { margin-top: .25rem; }
+        .menu-toggle { display: grid; place-items: center; }
+      }
+      @media (max-width: 860px) {
+        :root { --content: min(100% - 34px, 680px); }
+        .nav { min-height: 68px; }
         .hero { padding: 48px 0 62px; }
         .hero__grid, .story__wrap { grid-template-columns: 1fr; }
         .hero__visual { min-height: 460px; }
         .hero-card--main { right: 12px; }
         .hero-card--stat { right: -4px; }
-        .numbers { grid-template-columns: 1fr; margin-top: -16px; }
+        .numbers { grid-template-columns: 1fr; margin-top: -18px; }
         .number + .number { border-top: 1px solid var(--line); border-left: 0; }
-        .section { padding: 78px 0; }
+        .section { padding: 72px 0; }
+        .numbers + .section { padding-top: 58px; }
         .care-grid { grid-template-columns: 1fr; }
         .story__wrap { padding: 70px 0; }
         .story__image { max-width: 580px; }
@@ -279,35 +290,40 @@
         .facility:nth-child(2) { grid-column: 1; grid-row: 2; }
         .facility:nth-child(3) { grid-column: 2; grid-row: 2; }
         .facility:nth-child(4) { grid-column: 1 / span 2; grid-row: 3; }
-        .gallery { grid-template-columns: repeat(5, 1fr); }
+        .testimonials__wrap { padding: 75px 0; }
+        .review-shell { grid-template-columns: 205px 1fr; }
         .footer { grid-template-columns: 1fr 1fr; }
         .footer > :first-child { grid-column: 1 / -1; }
-        .modal__arrow--prev { left: 9px; }
-        .modal__arrow--next { right: 9px; }
       }
       @media (max-width: 540px) {
         :root { --content: min(100% - 28px, 500px); }
         .top-strip__inner { justify-content: center; font-size: .62rem; }
         .top-strip span { display: none; }
         .brand__name strong { font-size: .9rem; }
+        .brand__name span { font-size: .53rem; }
+        .brand__mark { width: 32px; height: 32px; }
+        .brand__mark::before { width: 17px; left: 7px; top: 14px; }
+        .brand__mark::after { height: 17px; left: 14px; top: 7px; }
         h1 { font-size: clamp(2.45rem, 12vw, 3.55rem); }
         .hero__visual { min-height: 395px; }
         .hero-card--main { right: 6px; }
         .hero-card--stat { width: 190px; padding: .9rem; }
         .hero-card--stat strong { font-size: 1.23rem; }
+        .number { min-height: 82px; padding: .92rem 1rem; }
         .facility-grid { grid-template-rows: 235px 174px 174px; gap: 10px; }
-        .facilities-head, .gallery-intro { display: block; }
+        .facilities-head, .testimonials__head { display: block; }
         .text-link { margin-top: -1.2rem; margin-bottom: 1.6rem; }
-        .gallery { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .gallery button:nth-child(3n) { transform: none; }
-        .gallery button:nth-child(2n) { transform: translateY(10px); }
-        .gallery-section { padding-bottom: 58px; }
+        .reviews-link { margin-top: 1.2rem; }
+        .review-shell { grid-template-columns: 1fr; }
+        .review-summary { padding: 1.25rem; }
+        .review-summary__score strong { font-size: 2.45rem; }
+        .review-card { grid-template-columns: 1fr; gap: .8rem; padding: 1.55rem 1.25rem 4.15rem; }
+        .review-card__quote { width: 36px; height: 36px; border-radius: 11px; }
+        .review-card blockquote { font-size: 1.12rem; }
         .visit-wrap { padding: 68px 0; }
         .visit { padding: 2rem 1.4rem; }
         .footer { grid-template-columns: 1fr; }
         .footer > :first-child { grid-column: auto; }
-        .modal__close { top: 9px; right: 9px; }
-        .modal__image { max-height: calc(100vh - 55px); }
       }
     </style>
   </head>
@@ -330,7 +346,7 @@
         <div class="nav-links">
           <a href="#about">About us</a>
           <a href="#facilities">Facilities</a>
-          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
           <a class="nav-button" href="https://wa.me/918600413777?text=Hello%20Amrut%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
         </div>
       </nav>
@@ -410,33 +426,48 @@
             <h2 id="facilities-title">A look at our patient-care spaces.</h2>
             <p>Explore the facilities that support consultations, procedure care, newborn care and a comfortable patient journey.</p>
           </div>
-          <a class="text-link" href="#gallery">View all photos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="text-link" href="#reviews">Read patient reviews <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="facility-grid">
-          <button class="facility" data-gallery="0" type="button"><img src="assets/procedure-room.jpeg" alt="Procedure room with C-arm imaging equipment" /><span>Procedure &amp; clinical care</span></button>
-          <button class="facility" data-gallery="1" type="button"><img src="assets/newborn-care.jpeg" alt="Newborn care equipment at the hospital" /><span>Newborn care support</span></button>
-          <button class="facility" data-gallery="2" type="button"><img src="assets/waiting-area.jpeg" alt="Patient waiting area at Amrut Hospital" /><span>Comfortable waiting areas</span></button>
-          <button class="facility" data-gallery="3" type="button"><img src="assets/procedure-c-arm.jpeg" alt="Clinical procedure room at Amrut Hospital" /><span>Equipped clinical facilities</span></button>
+          <article class="facility"><img src="assets/procedure-room.jpeg" alt="Procedure room with C-arm imaging equipment" /><span>Procedure &amp; clinical care</span></article>
+          <article class="facility"><img src="assets/newborn-care.jpeg" alt="Newborn care equipment at the hospital" /><span>Newborn care support</span></article>
+          <article class="facility"><img src="assets/waiting-area.jpeg" alt="Patient waiting area at Amrut Hospital" /><span>Comfortable waiting areas</span></article>
+          <article class="facility"><img src="assets/procedure-c-arm.jpeg" alt="Clinical procedure room at Amrut Hospital" /><span>Equipped clinical facilities</span></article>
         </div>
       </section>
 
-      <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
-        <div class="gallery-intro">
-          <div><p class="eyebrow">Photo gallery</p><h2 id="gallery-title">A closer look at Amrut.</h2></div>
-          <p>Select any photo to view the hospital, reception, patient spaces and clinical equipment in more detail.</p>
-        </div>
-        <div class="gallery">
-          <button data-gallery="4" type="button"><img src="assets/exterior-day.png" alt="Daytime hospital exterior" /></button>
-          <button data-gallery="5" type="button"><img src="assets/exterior-night.jpeg" alt="Hospital exterior at night" /></button>
-          <button data-gallery="6" type="button"><img src="assets/reception.jpeg" alt="Hospital reception desk" /></button>
-          <button data-gallery="7" type="button"><img src="assets/corridor.jpeg" alt="Hospital corridor and seating" /></button>
-          <button data-gallery="8" type="button"><img src="assets/procedure-theatre.jpeg" alt="Procedure theatre" /></button>
-          <button data-gallery="9" type="button"><img src="assets/anaesthesia.jpeg" alt="Anaesthesia equipment" /></button>
-          <button data-gallery="10" type="button"><img src="assets/theatre-entry.jpeg" alt="Entry to procedure theatre" /></button>
-          <button data-gallery="11" type="button"><img src="assets/sterilisation.jpeg" alt="Sterilisation equipment" /></button>
-          <button data-gallery="12" type="button"><img src="assets/anaesthesia-monitoring.jpeg" alt="Clinical monitoring equipment" /></button>
-          <button data-gallery="13" type="button"><img src="assets/neonatal-suite.jpeg" alt="Newborn care suite" /></button>
-          <button data-gallery="14" type="button"><img src="assets/support-space.jpeg" alt="Hospital support space" /></button>
+      <section class="testimonials" id="reviews" aria-labelledby="reviews-title">
+        <div class="testimonials__wrap">
+          <div class="testimonials__head">
+            <div><p class="eyebrow">Patient stories</p><h2 id="reviews-title">Kind words from the people we care for.</h2></div>
+            <a class="button button--light reviews-link" href="https://share.google/FnUTTJZaTZ7Xbsdzq" target="_blank" rel="noopener">Read Google reviews <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="review-shell">
+            <aside class="review-summary" aria-label="Google review summary">
+              <p class="review-summary__label">Google reviews</p>
+              <div class="review-summary__score"><strong>4.0</strong><span>out of 5</span></div>
+              <p class="stars" aria-label="Four out of five stars">★★★★<span style="color:#5f8977">★</span></p>
+              <p>Based on 41 Google reviews for Amrut Hospital.</p>
+            </aside>
+            <div class="review-carousel" aria-roledescription="carousel" aria-label="Patient reviews">
+              <div class="review-track">
+                <article class="review-card" aria-roledescription="slide" aria-label="Review 1 of 2">
+                  <div class="review-card__quote" aria-hidden="true">“</div>
+                  <div><blockquote>“Dr Vasude and all other staff here are like family to us.”</blockquote><p class="review-card__meta"><strong>Ameya Gondhalekar</strong><span class="review-card__rating" aria-label="Five stars">★★★★★</span><span>Google review</span></p></div>
+                </article>
+                <article class="review-card" aria-roledescription="slide" aria-label="Review 2 of 2">
+                  <div class="review-card__quote" aria-hidden="true">“</div>
+                  <div><blockquote>“They ensured I had a smooth prep, delivery and follow-up.”</blockquote><p class="review-card__meta"><strong>Sainath Kamuni</strong><span class="review-card__rating" aria-label="Five stars">★★★★★</span><span>Google review</span></p></div>
+                </article>
+              </div>
+              <div class="review-controls">
+                <button class="review-arrow review-prev" type="button" aria-label="Show previous review">‹</button>
+                <button class="review-arrow review-next" type="button" aria-label="Show next review">›</button>
+                <div class="review-dots" role="tablist" aria-label="Choose a review"><button class="review-dot is-active" type="button" aria-label="Show review 1" aria-selected="true" data-review-slide="0"></button><button class="review-dot" type="button" aria-label="Show review 2" aria-selected="false" data-review-slide="1"></button></div>
+              </div>
+            </div>
+          </div>
+          <p class="reviews-disclosure">Review excerpts and rating are from the public Google reviews listing for Amrut Hospital.</p>
         </div>
       </section>
 
@@ -459,21 +490,11 @@
     <footer>
       <div class="footer">
         <div><a class="brand" href="#top"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name"><strong>AMRUT</strong><span>Multispeciality Hospital</span></span></a><p>Thoughtful, compassionate hospital care for our community since 1987.</p></div>
-        <div><h3>Explore</h3><a href="#about">Our approach</a><a href="#facilities">Facilities</a><a href="#gallery">Photo gallery</a></div>
+        <div><h3>Explore</h3><a href="#about">Our approach</a><a href="#facilities">Facilities</a><a href="#reviews">Patient reviews</a></div>
         <div><h3>Connect</h3><a href="https://wa.me/918600413777" target="_blank" rel="noopener">WhatsApp us</a><a href="tel:+918600413777">+91 86004 13777</a><a href="https://share.google/SZDgbg0KhTsr6MPUM" target="_blank" rel="noopener">Get directions</a></div>
       </div>
       <div class="footer-bottom">© <span id="year"></span> Amrut Multispeciality Hospital. All rights reserved.</div>
     </footer>
-
-    <div class="modal" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="modal-label">
-      <div class="modal__frame">
-        <button class="modal__close" type="button" aria-label="Close gallery"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-        <button class="modal__arrow modal__arrow--prev" type="button" aria-label="Previous photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
-        <img class="modal__image" src="" alt="" />
-        <button class="modal__arrow modal__arrow--next" type="button" aria-label="Next photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
-        <p class="modal__label" id="modal-label"></p>
-      </div>
-    </div>
 
     <script>
       const menuButton = document.querySelector('.menu-toggle');
@@ -488,59 +509,22 @@
         menuButton.setAttribute('aria-expanded', 'false');
       }));
 
-      const photos = [
-        ['assets/procedure-room.jpeg', 'Procedure & clinical care'],
-        ['assets/newborn-care.jpeg', 'Newborn care support'],
-        ['assets/waiting-area.jpeg', 'Comfortable waiting areas'],
-        ['assets/procedure-c-arm.jpeg', 'Equipped clinical facilities'],
-        ['assets/exterior-day.png', 'Amrut Multispeciality Hospital'],
-        ['assets/exterior-night.jpeg', 'Amrut Hospital in the evening'],
-        ['assets/reception.jpeg', 'Reception at Amrut Hospital'],
-        ['assets/corridor.jpeg', 'Patient seating and corridor'],
-        ['assets/procedure-theatre.jpeg', 'Procedure theatre'],
-        ['assets/anaesthesia.jpeg', 'Anaesthesia equipment'],
-        ['assets/theatre-entry.jpeg', 'Procedure theatre entry'],
-        ['assets/sterilisation.jpeg', 'Sterilisation equipment'],
-        ['assets/anaesthesia-monitoring.jpeg', 'Clinical monitoring equipment'],
-        ['assets/neonatal-suite.jpeg', 'Newborn care suite'],
-        ['assets/support-space.jpeg', 'Hospital support space']
-      ];
-      const modal = document.querySelector('#gallery-modal');
-      const modalImage = modal.querySelector('.modal__image');
-      const modalLabel = modal.querySelector('.modal__label');
-      let currentPhoto = 0;
-      let lastTrigger = null;
-      function showPhoto(index) {
-        currentPhoto = (index + photos.length) % photos.length;
-        modalImage.src = photos[currentPhoto][0];
-        modalImage.alt = photos[currentPhoto][1];
-        modalLabel.textContent = photos[currentPhoto][1];
+      const reviewTrack = document.querySelector('.review-track');
+      const reviewSlides = Array.from(document.querySelectorAll('.review-card'));
+      const reviewDots = Array.from(document.querySelectorAll('[data-review-slide]'));
+      let currentReview = 0;
+      function showReview(index) {
+        currentReview = (index + reviewSlides.length) % reviewSlides.length;
+        reviewTrack.style.transform = `translateX(-${currentReview * 100}%)`;
+        reviewDots.forEach((dot, dotIndex) => {
+          const active = dotIndex === currentReview;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-selected', active);
+        });
       }
-      function openGallery(index, trigger) {
-        lastTrigger = trigger;
-        showPhoto(index);
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-        modal.querySelector('.modal__close').focus();
-      }
-      function closeGallery() {
-        modal.classList.remove('is-open');
-        document.body.style.overflow = '';
-        if (lastTrigger) lastTrigger.focus();
-      }
-      document.querySelectorAll('[data-gallery]').forEach(button => {
-        button.addEventListener('click', () => openGallery(Number(button.dataset.gallery), button));
-      });
-      modal.querySelector('.modal__close').addEventListener('click', closeGallery);
-      modal.querySelector('.modal__arrow--prev').addEventListener('click', () => showPhoto(currentPhoto - 1));
-      modal.querySelector('.modal__arrow--next').addEventListener('click', () => showPhoto(currentPhoto + 1));
-      modal.addEventListener('click', event => { if (event.target === modal) closeGallery(); });
-      document.addEventListener('keydown', event => {
-        if (!modal.classList.contains('is-open')) return;
-        if (event.key === 'Escape') closeGallery();
-        if (event.key === 'ArrowLeft') showPhoto(currentPhoto - 1);
-        if (event.key === 'ArrowRight') showPhoto(currentPhoto + 1);
-      });
+      document.querySelector('.review-prev').addEventListener('click', () => showReview(currentReview - 1));
+      document.querySelector('.review-next').addEventListener('click', () => showReview(currentReview + 1));
+      reviewDots.forEach(dot => dot.addEventListener('click', () => showReview(Number(dot.dataset.reviewSlide))));
       document.querySelector('#year').textContent = new Date().getFullYear();
     </script>
   </body>
